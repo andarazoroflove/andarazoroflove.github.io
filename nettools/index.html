@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>nettools: a simple script for pinging things...</title>
+</head>
+
+<body>
+
+<p><i><font size="6"><b>nettools</b>: </font><font size="4">a free, simple 
+script to ping things...</font></i></p>
+<p>
+<span style="font-variant: small-caps; font-weight: 700; background-color: #FFFFCC">
+current version:&nbsp; 2.0.1 (08.22.2006)</span></p><hr>
+<p><u><b><font face="Courier New">NEWS</font></b></u></p>
+<p><font face="Courier New">As of version 1.7, nettools no longer requires 
+CHOICE.EXE. CHOICE will still be available below, its quite useful. There is no 
+compiled .exe of
+<a href="http://nettools.andarazoroflove.org/archive/nettools1.7.bat">
+<span style="text-decoration: none">version 1.7</span></a> available--however 
+I've left it available because it marks the end of use for CHOICE. As of version 
+1.7 the script now requires the Windows Scripting Host to accept variables. Why? 
+Because nettools had a critical flaw: it was allowing redirected (|) commands 
+because it was providing command line access (albeit restricted). If you trust 
+your users I'd suggest continue to use
+<a href="http://nettools.andarazoroflove.org/archive/nettools1.6.exe">
+<span style="text-decoration: none">version 1.6</span></a> as its faster and 
+doesn't need WSH.</font></p>
+<p><font face="Courier New">Nettools now uses a
+<a href="http://nettools.andarazoroflove.org/archive/nettools.vbs">
+<span style="text-decoration: none">stub of Windows Scripting</span></a> and the 
+command-line processor cscript (included since Win98) to accept the input 
+variable and parse it in to a file which is manipulated by nettools in the 
+background. Nettools processes the file with a .com object written in assembler 
+on the fly during script initialization. This .com object (<a href="http://nettools.andarazoroflove.org/archive/create.pipecleaner.bat"><span style="text-decoration: none">pipeclean.com</span></a>) 
+actively searches the file for the | and returns an ILLEGAL SYNTAX error which 
+prevents the user from spawning unwanted processes. Nettools creates the .vbs 
+and .com object on the fly and deletes them as soon as the command finishes.</font></p>
+<p><font face="Courier New">I have created a step-by-step guide to compiling 
+nettools using the free, built-in-to-windows program called IExpress (Don't 
+worry the IE doesn't stand for Internet Explorer, it stands for 
+Installation-Extractor). View the guide
+<a href="http://nettools.andarazoroflove.org/compile.html">
+<span style="text-decoration: none">HERE</span></a> I've also uploaded the 
+current <a href="http://nettools.andarazoroflove.org/archive/tools.ico">
+<span style="text-decoration: none">icon file</span></a> I am using for 
+nettools.</font></p>
+<hr>
+<p><u><b><font face="Courier New">FAQ</font></b></u></p>
+<p><b><font face="Courier New">Does the world really need another network 
+utility?</font></b></p>
+<p><font face="Courier New">Sure, why not? I manage about 500 Windows XP 
+workstations for a call-center company who's client has recently decided to 
+foray in to the WiFi Internet Service Provider business. The call-center agent's 
+needed a teaching tool which would mimic the standard DOS/CMD commands and responses for 
+troubleshooting tools like <b>PING, TRACERT, </b>and <b>NSLOOKUP</b>. </font>
+</p>
+<p><b><font face="Courier New">Why wouldn't a freeware utility like <i>PingIt!</i> 
+or <i>TraceIt!</i> work?</font></b></p>
+<p><font face="Courier New">Well there in lies the quandary. Those are great 
+examples of freeware utilities to do just that, but if you only have access to 
+DOS/CMD (there's lots o'Win98 users still out there) then you don't have those 
+utilities. Besides, if you need to use these tools for troubleshooting, you 
+won't be able to download them. </font></p>
+<p><font face="Courier New"><b>nettools</b> is the solution to a unique 
+instructional design problem, &quot;<i>how do we train agents to use these DOS tools 
+with out providing them access to the command line?</i>&quot; </font></p>
+<p><font face="Courier New"><b>nettools</b> is a simple script which will allow 
+the user to use PING, TRACERT, NSLOOKUP and NETSH commands while mimicking the 
+DOS/CMD environment found in all 32/64bit versions of Windows<sup><span style="font-variant: small-caps">(R)</span></sup>. 
+Through a simple menu interface the user can interact with these TCP/IP commands 
+becoming familiar with the syntax of each command. Because nettools looks and 
+acts just like the command line (because it is, really) the user gets real 
+experience. </font></p>
+<hr>
+<p><span style="font-weight: 700; text-decoration: underline">
+<font face="Courier New">CODE/UTILITIES</font></span></p>
+<p><font face="Courier New"><a href="../nettool/nettools.bat.txt">
+<span style="text-decoration: none; font-weight: 700">nettools.bat.txt</span></a> 
+is the actual code; rename this file with out .txt to execute directly. nettools is released under the <b>
+<a href="http://www.gnu.org/licenses/gpl.html">
+<span style="text-decoration: none">GPL</span></a></b>, and is free for all 
+redistribution or modification as long as the changes are left open for the 
+world to see and tinker with.</font></p>
+<p><font face="Courier New">Pre-compiled binaries are available as well, the 
+latest is <b><a href="../nettool/nettools-latest.exe">
+<span style="text-decoration: none">HERE</span></a></b> and the older versions 
+are located <b><a href="http://nettools.andarazoroflove.org/archive/">
+<span style="text-decoration: none">HERE</span></a></b>.</font></p>
+<p><font face="Courier New">Nettools used to be dependant on <a href="../nettool/choice.exe">
+<span style="text-decoration: none; font-weight: 700">CHOICE.EXE</span></a><span style="font-weight: 700"> </span>
+(it's not anymore) from 
+the WindowsXP resource kit. CHOICE.EXE should be placed in %systemroot% or the 
+folder that nettools is executed from. If you'd like, you can also get <b><a href="wget.exe">
+<span style="text-decoration: none">wget</span></a></b>, this version for 
+Windows compiled by <a href="http://www.interlog.com/~tcharron/wgetwin.html">
+<span style="text-decoration: none">tcharron at interlog.com</span></a>. wget is 
+also released under the GPL and is free for redistribution.</font></p>
+<hr>
+
+</body>
+
+</html>

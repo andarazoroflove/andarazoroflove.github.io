@@ -1,0 +1,83 @@
+<html><head><title>Installing SunPCi cards on Solaris 10</title>
+
+
+<link rel="STYLESHEET" href="sunpci_files/howto.css" type="text/css"></head><body>
+<ol type="1">
+<span class="list"><li>Download and install the SUNWspci* drivers</li></span>
+<p>To grab these, check out the Sun Downloads page:<br> <a href="http://www.sun.com/download/index.jsp?tab=2">http://www.sun.com/download/index.jsp?tab=2</a></p>
+<p>As of the writing of this HOWTO (Jul. 25, 2005) you should be able to just go here:<br> <a href="http://www.sun.com/desktop/products/sunpci/downloads.html">http://www.sun.com/desktop/products/sunpci/downloads.html</a></p>
+<p class="noteall"><b>***NOTE***</b> - Make sure to download the proper
+file! You want to download the version number corresponding to the
+SunPCi card you have. (ie. - SunPCi I needs the 1.x packages, SunPCi II
+needs the 2.x packages, etc.)</p>
+<p>Once downloaded, run "uncompress" and "tar" on the file. . .</p>
+<p class="code"># uncompress SUNWspci*.tar.Z<br># tar xvf SUNWspci*.tar</p>
+<p>. . .and in the same directory, you should be able to run the following:</p>
+<p class="code"># pkgadd -d ./</p>
+<p>This will now install the necessary packages to the machine.</p>
+<p class="notetop"><b>***NOTE***</b> - You will probably notice the following error occur:</p><br>
+<p class="icode">Executing postinstall script<br>Warning: /etc/devlink.tab not updated correctly<br>Perhaps the system OBP needs to be updated<br>pkgadd: ERROR: postinstall script did not complete successfully</p><br>
+<p class="notebottom"><b>*This is normal*</b> as it's trying to install a Solaris 10 version of the driver, which doesn't exist yet.  We will fix this in a few steps.</p><br>
+<span class="list"><li>Download and install appropriate SUNWspci* patches</li></span>
+<p>For SunPCi I cards, grab patch # 110762-04:<br> <a href="http://sunsolve.sun.com/search/document.do?assetkey=1-21-110762-04-1">http://sunsolve.sun.com/search/document.do?assetkey=1-21-110762-04-1</a></p>
+<p>For SunPCi II cards, grab patch # 113616-06:<br> <a href="http://sunsolve.sun.com/search/document.do?assetkey=1-21-113616-06-1">http://sunsolve.sun.com/search/document.do?assetkey=1-21-113616-06-1</a></p>
+<p>Once downloaded, copy the file over into the <b>/var/tmp/</b> directory.</p>
+<p class="code"># cp 11xxxx-xx.zip /var/tmp</p>
+<p>From there, run "unzip" on the file and install the patch to the system.</p>
+<p class="code"># unzip 11xxxx-xx.zip<br># patchadd ./11xxxx-xx</p>
+<p>This will now install the latest patches for these cards.</p>
+<p class="noteall"><b>***NOTE***</b> - Theoretically, you can unzip the
+patch and install it in the directory you downloaded it to. However, I
+was experiencing strange errors when I attempted this. There is an
+official InfoDoc on SunSolve that tells you that it is best to install
+from the <b>/var/tmp/</b> directory so as not to cause chaos.</p><br>
+<span class="list"><li>Create a link from the old Solaris drivers to a new Solaris 10 driver</li></span>
+<p>Because there are no offfical Solaris 10 drivers for these cards, we
+have to fool the system into thinking otherwise. To do this we need to
+create a hard link to point to the older Solaris drivers.</p>
+<p>First off, lets go to the directory where the drivers are located.</p>
+<p><i>For SunPCi I cards:</i><br><span class="code"># cd /opt/SUNWspci/drivers/solaris</span></p>
+<p><i>For SunPCi II cards:</i><br><span class="code"># cd /opt/SUNWspci2/drivers/solaris</span></p>
+<p>Next, we make the OS think there is an actual Solaris 10 driver by creating a hard link to the old Solaris drivers.</p>
+<p><i>For SunPCi I cards:</i><br><span class="code"># ln sunpcidrv.280 sunpcidrv.2100<br># ln sunpcidrv.280.64 sunpcidrv.2100.64</span></p>
+<p><i>For SunPCi II cards:</i><br><span class="code"># ln sunpcidrv.290 sunpcidrv.2100<br># ln sunpcidrv.290.64 sunpcidrv.2100.64</span></p>
+<span class="list"><li>Run "sunpcload" to load the kernel modules</li></span>
+<p>Remember that nasty error we got back in Step 1? This is where we
+succeed where the package failed. It attempted to perform this step,
+but did not perform the necessary instructions in Step 3.</p>
+<p>Now that the "supposed" Solaris 10 drivers for the SunPCi cards are
+created, we need to implement them into the kernel before we can use
+them. For this, we run a program called "sunpcload" to put these
+drivers into kernel use.</p>
+<p>Make sure that you are in the directory where "sunpcload" lives.</p>
+<p><i>For SunPCi I cards:</i><br><span class="code"># cd /opt/SUNWspci/drivers/solaris</span></p>
+<p><i>For SunPCi II cards:</i><br><span class="code"># cd /opt/SUNWspci2/drivers/solaris</span></p>
+<p>Then all we do is run the software.</p>
+<p class="code"># ./sunpcload</p>
+<p>If all goes well, it should sits for a few seconds and come back to the prompt without any messages.</p>
+<p class="notetop"><b>***NOTE***</b> - If you receive something similiar to the following error message (this particular error is for a SunPCi II card). . .</p><br>
+<p class="icode">devfsadm: driver failed to attach: sunpci2drv<br>Warning: Driver (sunpci2drv) successfully added to system but failed to attach.</p><br>
+<p class="notebottom">. . .make sure you made the hard links mentioned
+in Step 3. These errors will occur if they were not created correctly
+(or not created at all).</p><br>
+<span class="list"><li>Boot up the SunPCi card and wreak havoc</li></span>
+<p>We are all clear to start 'er up!</p>
+<p>Before we jump into the thick of it, lets make sure that the system sees the card and that it's ready to use.</p>
+<p>To do this, run the "sunpci" command with the "-l" option to list the available cards.</p>
+<p><i>For SunPCi I cards:</i><br><span class="code"># /opt/SUNWspci/bin/sunpci -l</span></p>
+<p><i>For SunPCi II cards:</i><br><span class="code"># /opt/SUNWspci2/bin/sunpci -l</span></p>
+<p>You should get something like the following (this is from my own personal SunPCi II card):</p>
+<pre class="code">Opening a SunPCi window...
+
+Name = Card1
+  Device = /dev/sunpci2drv0
+  Type = SunPCi II
+  Description = SunPCi II card
+  Peripherals = 
+  ID = XX:XX:XX:XX:XX:XX
+</pre>
+<p>From here, we have all green lights!  Just fire up "sunpci" and have fun!</p>
+<p><i>For SunPCi I cards:</i><br><span class="code"># /opt/SUNWspci/bin/sunpci</span></p>
+<p><i>For SunPCi II cards:</i><br><span class="code"># /opt/SUNWspci2/bin/sunpci</span></p>
+</ol>
+</body></html>

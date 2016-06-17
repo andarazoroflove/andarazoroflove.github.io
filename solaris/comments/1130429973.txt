@@ -1,0 +1,4 @@
+1139093806###1130429973###Matt###matt@matthewmoldvan.com###&quot;df -k&quot; seems to work pretty well, plus the behavior is pretty consistent over most flavors of UNIX and Linux distros ...&#13;<br>&#13;<br>-bash-3.00# df -k&#13;<br>Filesystem            kbytes    used   avail capacity  Mounted on&#13;<br>/dev/dsk/c1d0s0       195439  127620   48276    73%    /&#13;<br>...
+1160723279###1130429973###Zumajim######I've been aliasing df to 'df -hk' for a long time now. When you use -l, the -h seems to be redundant, but I want to make sure I never see the ugly default output of just 'df' alone. 
+1160723341###1130429973###Zumajim######That should read &quot;when you use -k&quot; 
+1218005607###1130429973###K###dhanu8@yahoo.com###It helped me a lot. Thank you.

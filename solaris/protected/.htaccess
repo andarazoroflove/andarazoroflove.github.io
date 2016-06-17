@@ -1,0 +1,4 @@
+AuthType Basic
+AuthUserFile /home/content/s/h/a/shakezula/html/.htpasswd
+AuthName "prOtected"
+require valid-user 
