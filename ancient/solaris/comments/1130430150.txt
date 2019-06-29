@@ -1,0 +1,1 @@
+1200226803###1130430150###Padma###padmaster@gmail.com###I want to setup a Shoutcast streaming server on Solaris 10 with AMD OPTERON processor. Could you please provide some input on the same. 

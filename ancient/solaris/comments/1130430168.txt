@@ -1,0 +1,1 @@
+1156948624###1130430168###Loris######gcc bundled with S10 is compiled with explicit option: --with-ld=/usr/ccs/bin/ld
