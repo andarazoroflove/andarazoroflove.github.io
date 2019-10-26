@@ -1,257 +1,0 @@
-<?xml version="1.0"?>
-	<rss version="0.91">
-		<channel>
-			<title>things i&apos;ve learned about Solaris...</title>
-			<link>http://solaris.andarazoroflove.org/index.cgi</link>
-			<description>things i&apos;ve learned about Solaris...</description>
-			<language>en-us</language>
-			<copyright>(c)1999-2k5 andarazoroflove multimedia</copyright>
-	<item>
-		<title>A Couple Old Laptops</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1206198489</link>
-		<description>I got a couple new (old) laptops and have installed Solaris on them.   One is an Acer Travel Mate C300 Tablet PC with a 4gb hard drive and 512mb of RAM. This is my first experience with the CORE install of Solaris 10 (11/06, Retail DVD). I also installed the SUNWdt* packages from the DVD so I can use CDE via VNC.   The other isn't really old, its a Dell Latitude D610 (Solaris Certified) which has been installed with Open Solaris build 74. Anyway, something in the install didn't set up DNS as my resolving method and I can ping but get no www. lovin! I knew that /etc/resolv.conf held the names of the DNS servers, so I edited that...but to no avail.   To make DNS resolution work, I had to edit the /etc/nsswitch.conf file. This configuration file controls a variety of lookup types with several services including DNS.  Just read down through the file, its actually commented. You'll see you need to add DNS to the Hosts: line to get Solaris to query your DNS server for name resolution! </description>
-	</item>
-	<item>
-		<title>SunPCI Lives</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1182223932</link>
-		<description>It works!  I used the instructions from this site:  http://www.recursivegreen.com/howtos/sunpci.html  Cached copy here at the same url. One thing for Open Solaris to note, the drivers can not be named .210 (that's Solaris 10) instead name them .2110 and bingo they rock.  Another good tip is to use the built in VNC viewer which comes with the SUNWspci2 package. Simply edit /etc/Master.ini and add the following info to the bottom of the file:  [vnc] CmdLineArgs=-geometry &quot;1024x768&quot; -depth 24 DisplayNum=10 StartupScript=/opt/SUNWspci2/bin/VNCStartup UID=root ;User ID GID=root ;Group ID HomeDir=/root ;Home directory AutoStart=Enabled  Edit to suit your taste of course. The picture to the right is my SunPCI ii Penguin 600MHz Celeron with 128mb of RAM running under OpenSolaris build 66 on an UltraSPARC ii Enterprise 250 system and running my mNotes (Lotus Notes PDA Server) and VisionGS PE to power a camera looking up the stairs at my back door. (Yep, the one up top.)   If you'd like to see the full res pic, you can see it here:  http://andarazoroflove.org/gallery/misc/fOrk_screenie_with_sunpci?full=...</description>
-	</item>
-	<item>
-		<title>As promised a picture of my new Sun</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1182093060</link>
-		<description>Got to admit, I'm a bit rusty having not used Solaris in about a year seriously....  However I've already decked this one out with some cool stuff like an Osprey-100 Video Capture board, 2Gb of RAM, some 15,000 RPM SCSI drives, and a 600MHz SunPCI ii Penguin  &quot;computer on a pci card&quot; to run some windows apps (mNotes and to add USB support to the Sun&quot;  By the way, the SunPCI ii drivers DO work on OpenSolaris, I'll post a how-to some time this week on how I did it. I also found a couple other sites like mine which list things people have learned about Solaris and their trials and tribulations...very cool! Here's one of the better sites:  http://www.hecomputing.org </description>
-	</item>
-	<item>
-		<title>It has been a LONG timeagain</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1181063118</link>
-		<description>Got this blog back up and going...just acquired a new SPARC, an Enterprise 250 dual processor box and just got it up and running.  Welcome back :)</description>
-	</item>
-	<item>
-		<title>libevent tor and privoxy binaries for OpenSolaris Nevada</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1162265232</link>
-		<description>As promised, here's some ready to go compiled binaries for libevent, tor, and privoxy. These were compiled using CSW GCC3 on a OpenSolaris x86 Nevada build 48 box. They are not in pkg-add format for that reason. Each package is set to install in /usr. You can install them simply by extracting and then running gmake install from within the extracted folder with superuser rights.  http://solaris.andarazoroflove.org/packages/libevent-1.1b.sol11-x86.bin.tar.bz2  http://solaris.andarazoroflove.org/packages/tor-0.1.1.24.sol11-x86.bin.tar.bz2  http://solaris.andarazoroflove.org/packages/privoxy-3.0.5-BETA.sol11-x86.bin.tar.bz2  Happy anonymizing. I was quite pleasantly surprised to find that tor seems to run faster under Solaris than on a similarly equally equipped Red Hat Core 5 box. I've decided to forgo the explanation of how to set tor and privoxy up as each have excellent man pages....and if you're setting these items up you most likely know how man pages work :)</description>
-	</item>
-	<item>
-		<title>Wow tis been some time</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1161658876</link>
-		<description>I just got around to rebuilding a Solaris machine at home, I've been using Fedora Core 5 since my Ultra 30 had to go on eBay to pay some bills :(   My Fedora and new OpenSolaris x86 boxen are identical, they are refugee Dell Optiplex GX1's from work upgraded with 550MHz Pentium III's and 256mb of ram each. Other than that, the Fedora box also has a 100mb Zip Drive (and i have exactly ONE disk), a 56K Diamond HSF modem (drivers by Linuxant), and a USB Logitech QuickCam STX (powered by camE and spcaXXX).  Anyway, I'm rambling...but suffice to say I've begun to use Solaris again albeit on x86 :( I'd like to get my old SPARCStation 20 back up and operational--I need a processor module and an EEPROM if anyone wants to donate or trade for other miscellaneous parts :)  I've been busy compiling interesting things on my new OpenSolaris system &quot;fOrk&quot; (of course) and as such watch for packages of tor, libevent, and privoxy coming soon along with some init scripts for launching them all straightaway.</description>
-	</item>
-	<item>
-		<title>Lock Invalid Login Accounts Out</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1140799217</link>
-		<description>If you have a few users on your Solaris machine you might want to give this a whirl. The original tip came from a blog at sun.com here: http://blogs.sun.com/roller/page/gbrunett/20040923  You can set a variable in /etc/security/policy.conf to lock an account out which fails to put in the correct password. The Solaris default is 3 tries before lock out.  To enable this, pico /etc/security/policy.conf and change the last variable from:  #LOCK_AFTER_RETRIES=NO to: LOCK_AFTER_RETRIES=YES</description>
-	</item>
-	<item>
-		<title>Add line numbers to a printed file from the command line</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1137093771</link>
-		<description>Have you ever run a script from the shell, especially a .pl script and had it spit out an error like:  &quot;Bad Command on line XXX: expected EOF&quot;  ?  Here's a dirty way to simplify finding any line number from any file from the commandline using awk:  shake@fOrk %&gt;awk '{print NR&quot;: &quot;$0 }' awk '{print NR&quot;: &quot;$0 }'  2: 3:  4:  5:   You can pipe the output through more or less to see larger files, or pipe it in to a text file to make a hard copy of the line numbers. You could even grep the output if you were looking for a certain phrase, isn't chaining commands with pipes fun?</description>
-	</item>
-	<item>
-		<title>Customizing the ZSH or BASH Prompts</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1135283250</link>
-		<description>Some nifty things you can use to change the look of your ZSH or BASH prompts:  For example, I'm using the following switches in my .zshrc to customize my prompt:  PS1=&quot;%n@%m %~%#&quot;  which makes the prompt look like: shake@fOrk ~%  The BASH eqivalent would be:  PS1=&quot;\u@\h \w\$&quot; which makes the prompt look like: shake@fOrk ~$  The cool thing about this is that you can add the current directory to the prompt and always know where you are. You could also do date and time stamps like this too! </description>
-	</item>
-	<item>
-		<title>Cool ps command things</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1135182253</link>
-		<description>ps -s $$  will display the type of shell you are using.  fOrk% ps -p $$ PID TTY         TIME CMD 1038 pts/6       0:00 zsh </description>
-	</item>
-	<item>
-		<title>Running multiple SSH daemons on 1 Computer</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1135136468</link>
-		<description>The OpenSSH sshd server and sftp-server can be started for more than one group or user on different ports. Edit your sshd_config (often /etc/ssh/sshd_config or in one of the other /etc folders).  Change the following and save alternate copies with the different options:  Port xx (use whatever, 22 is the standard, anything over 1024 is good) AllowUsers soandso,anotheruser,more (comma delmited list of allowed users, can just be one)  Then you can start another sshd using the -f option and specifying the file. Like so:  root@fOrk #&gt;/usr/local/etc/sshd -f /etc/ssh/sshd &amp;  This way you can make multiple init.d scripts and start a new sshd server for different groups. Now on to figuring out bandwidth limiting....</description>
-	</item>
-	<item>
-		<title>The Application Manager in CDE</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1135123991</link>
-		<description>It is probably hilarious to a Solaris afficianado that I have just recently discovered the Application Manager in Solaris.  I started to use Solaris for hobby about 5 years ago. Solaris 2.6 was the version then and came with OpenWindows and CDE. OpenWindows wasn't pretty, but I've met a few &quot;old-hack&quot; admins who prefered it to CDE. OpenWindows got phased out of Solaris 9 in lieu of Gnome.   CDE however remains included, even in the bleeding edge builds. I'm currently using Solaris Express: Community Build Nevada 23 SPARC and CDE is a considerably speedier than the Gnome-based Java Desktop System. The JDS is REALLY pretty though.   My Ultra 30 is much more responsive in CDE on the console compared to the JDS. Odd though, over VNC, CDE and Java Desktop System seem to run at comparable speed. I think some framebuffer lag is the difference, My Ultra 30 has a 32Mb UltraCreator 3D, not a lightning fast video card; CDE displays in muted colors and could use less VRAM.</description>
-	</item>
-	<item>
-		<title>Adding RAM to an Ultra</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1131591944</link>
-		<description>The Ultra 30 system has 16 slots for RAM. It has to be added in pairs, with out mixing stick sizes in any of the 4 banks of 4. You also have to put the largest sticks of RAM in the 0 slot positions and work up from there in banks/pairs.  For Example, the following arrangement would give you 768Mb of RAM.  _________________________________________________________ 128 128 xxx xxx | 64 64 64 64 | 64 64 64 64 | 32 32 32 32  </description>
-	</item>
-	<item>
-		<title>audioctl</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1131215822</link>
-		<description>Solaris's audio resets to defaults on every reboot. This tool, audioctl:  http://home.swipnet.se/~w-10694/utilities.html  Will allow for scripted audio settings upon reboot. You can make a simple script for init.d like so:  #/bin/bash audioctl -rp line -mv 35 -rv 75 -rb 32 -v 75 -p headphone -b  32  You'll need audioctl in your path, I ln -s'd it in to /bin/bash.  You do not need root privelages to change the audio settings or run audioctl. You can put it in your .profile or .bashrc if you'd like.</description>
-	</item>
-	<item>
-		<title>pkgadd n</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130985875</link>
-		<description>The switch to not have to keep saying &quot;y&quot; to pkgadd when installing multiple packages is -n (thank you man pkgadd)  On an interesting note, I installed the StarOffice 8 Trial on my Windows PC to compare it to another Windows PC running OpenOffice. When I downloaded a .doc file, Firefox on the PC with StarOffice asked me if I wanted to open the file with &quot;OpenOffice&quot; even though OOo was not installed.  Hey Sun, what was the difference between StarOffice and OpenOffice besides the licensing and fonts again?  :)</description>
-	</item>
-	<item>
-		<title>pkgadd notes</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130977593</link>
-		<description>OpenOffice 2.0 is out. I guess thats acutally old news, but installing it on SPARC isn't for me. The install on Linux and Windows is painless, just run ./setup or setup.exe. The install on Solaris is a bit different. Once you unzip the OpenOffice.Sparc.tar.gz file you'll have a directory called OOO(buildnumber).m3.native.packed.en-US.8968. In that folder you'll have folders for &quot;licenses&quot; &quot;packages&quot; and &quot;readmes&quot;.  Wait a second, where't the ./setup script? No automatic easy peasy .sh to run? ACK! Ok, not really, but the lack of documentation for installing OpenOffice on SPARC Solaris made getting to this point as far as I could get during the OOo betas. Now I know the answer, and its a pkgadd solution.  I noticed the &quot;packages&quot; dir contained not .pkg or .gz packages that I am used to installing, rather it contains the individual parts of OpenOffice in extracted package folders. The samething you'd get if you broke a .pkg file down. Solaris pkgadd -d is the command to install from a -device. I usually use -d whenever installing packages from SunFreeware or the 'net, but I didn't know you can install them from a directory like this.  Using this method, you can install from the cdrom like so:  fOrk #&gt;pkgadd -d /cdrom/packagesfolder  This way pkgadd parses ALL of the packages in the folder and presents them to you in a list to choose from or install all of. Knowing this, installing OpenOffice on SPARC (and x86) Solaris is as easy as:  fOrk #&gt;pkgadd -d /home/shake/OOO680_m3.native.packed.en-US.89360/packages  It will parse them and then you can select &quot;all&quot; to install the whole thing. OpenOffice 2.0 installs in /opt/OpenOffice2.0 by default. Now anyone know a way to not have to keep hitting &quot;y&quot; to all the packages?</description>
-	</item>
-	<item>
-		<title>RSS and Solaris Audio Control</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430951</link>
-		<description>So the new site now has RSS, get your aggregators fired up!  Did you know about the Solaris Audio Control? I did not. The Gnome (Java Desktop System) audio control is severly lacking on Solaris. It contains just 3 faders which do not move independantly and only control master volume. The faders are also named oddly.   The CDE standard Solaris Audio Control will allow you to select the inputs, outputs, and volume in a normal fashion. It can be started like so:  fOrk $&gt;/usr/dt/bin/sdtaudiocontrol  There are some utilities and an updated tool available here:  http://home.swipnet.se/~w-10694/utilities.html  That said, the site is all back to normal. (as normal as it gets) Needless to say I will be doing a FULL backup BEFORE any future upgrades! Thanks for reading! :)  </description>
-	</item>
-	<item>
-		<title>AAACK What happened</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430667</link>
-		<description>Ok, the site looks different. Something happened last night, the faux pas that any web dweeb dreads. I over wrote the blog.data file while trying to upgrade the blog software and poof, lost all my old posts :(  Thanks to the magic of Google's caching, I was able to recover all but the stuff I had posted in the last few days. The posts are all dated goofy, so I added the original post dates to the oldest of them. This blog is just about 1 year old, the first post was made on October 29th, 2004. Anyhow, I've trimmed some of the fluff from the old posts and the blog is 2 pages smaller than it was, no worries!  What did I post in the last few days? Lets go over those again...  Something about starting CDE through VNC: Edit the $HOME/.vnc/xstartup file, it will look like this:  $defaultXStartup = (&quot;#!/bin/sh\n\n&quot;. &quot;[ -r \$HOME/.Xresources ] &amp;&amp; xrdb \$HOME/.Xresources\n&quot;. &quot;xsetroot -solid grey\n&quot;. &quot;xterm -geometry 80x24+10+10 -ls -title \&quot;\$VNCDESKTOP Desktop\&quot; &amp;\n&quot;. twm  Replace the twm (tiny window manager) with this line:  /usr/dt/bin/dtwm &amp;\n  Save the file, and start up some VNC with CDE!!  What else? Oh yea the fact that I've changed root's shell to bash and why you may or may not want to do that, here:  http://www.roble.com/docs/sol_root_shell.html  Thats done with this command:  root@fOrk #&gt;usermod -s /bin/bash ...</description>
-	</item>
-	<item>
-		<title>lame compiling error</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430168</link>
-		<description>Over the last week, I've re-built my SPARC computer from scratch with the latest (build 23) Solaris Express and the OpenSolaris BFU's. I ran in to some issues trying to compile Lame 3.9.6.1. I was getting an error like such:   Error: Illegal operands: There are only 32 single precision f registers   This was using the Solaris 10 Companion CD's version of GCC (3.4.2). So I tried installing the Blastwave GCC 3.4.4, again no such luck.   After much Googling and trying different things, it seems that Sun's default ld (/usr/ccs/bin/ld) is not terribly compatible with GCC in its native format. I installed Blastwave's binutils (/opt/csw/bin) and linked them one by one in to (/usr/ccs/bin). YES I know I could have changed my pathing, but I didn't. All of the g utils are now in my /usr/ccs/bin and it compiled perfectly!   Unorthodox to be sure, but I'm more concerned about it working...as for why it worked on my old install, the pathing WAS correct for use from /opt/csw/bin, and I have since changed it on the new install. </description>
-	</item>
-	<item>
-		<title>LAME and Darkice Packages</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430150</link>
-		<description>Here's a couple new packages I've compiled. Lame 3.96.1 and Darkice 0.15.   http://solaris.andarazoroflove.org/packages/darkice-0.15-sol11-sun4u-local.gz   http://solaris.andarazoroflove.org/packages/lame-3.96.1-sol11-sun4u-local.gz   Both were compiled on an Ultra 30, OpenSolaris 5.11 build 18. Compiled with GCC 3.4.2, installs in /usr/local.   If anyone'd like my init script to launch shoutcast and darkice, leave a comment and I'll post it. </description>
-	</item>
-	<item>
-		<title>Remote XSession from Linux to Solaris</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430130</link>
-		<description>This is a cool thing. You can get a remote XSession including the CDE logon as a virtual terminal on a Linux box. Execute this from the Linux box:   X (display #) -query (host of solaris box)   ie: adam@wooble $&gt;X :2 -query fOrk   This will put the Solaris XSession on to the 2nd virtual console. You can switch back and forth between the Linux PC and the Solaris console using CTRL+ALT+F# (use F5 for the Linux PC, if you use :1 Solaris will be on F6, if you use :2 Solaris will be on F7 and so on) </description>
-	</item>
-	<item>
-		<title>OpenSolaris is here built and installed</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430108</link>
-		<description>Oh yea! I'm going to attempt to build this monster on my Ultra30...wish me luck...LOL!  Whew, I did it. I got OpenSolaris to build and install on my Ultra30 (took like 8 hours with 256mb of RAM) and a Dell Optiplex GX1 (no audio support atm for the ISA Crystal sound)   :D   </description>
-	</item>
-	<item>
-		<title>Opening ports in the Fedora firewall the easy way</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430061</link>
-		<description>Found this excellent tutorial on opening ports on the built in firewall using iptables.   http://stanton-finley.net/fedora_core_3_installation_notes.html#Azureus   Suprisingly its for Azureus, just the program I wanted to open ports for. I dont know why there isn't a more in-depth GUI available for Fedora, though I know a lot of *nix users like it that way. I'm easy, if there is a GUI in the menu, lemme at it, but the command line is your friend. </description>
-	</item>
-	<item>
-		<title>Linux Packages</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430035</link>
-		<description>Well, I've started to use Linux more and more, as my Solaris machine is where I want it. Its currently running my shell, secure SSL/TLS ftp site, and Bind server. Due to its paltry hardware and age, thats about all it's going to do. I still use it daily, but I've got some cheap PC hardware that Linux works great on, so this blog might start getting Linux tidbits more often.   :)   First up is some packages, rpm's for Samba 3.0.14a, built for Fedora Core 1, as Samba.org doesnt supply them. I'm still stuck in 2.4x kernel land, it just works better for me. You can get them at:   http://solaris.andarazoroflove.org/packages/linux   Enjoy, and watch for lots more! </description>
-	</item>
-	<item>
-		<title>from the quotno im not really sure why youd want toquot dept     </title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130430012</link>
-		<description>You can stop the KDE kicker panel loading and start the gnome-panel instead. Not that you'd want to...but you can.   This is how I did this on my Solaris 10 system, with the ancient 3.1 release (yes I KNOW!!!) from the Sun Companion CD, and stock Gnome.   #mv /opt/sfw/kde/share/autostart/panel.desktop ..  #ln -s /usr/bin/gnome-panel /opt/sfw/kde/share/autostart panel.desktop   If I were you, I'd back up the panel.desktop file, just stick it .. .   :)   This will let you run the Gnome panel (better than kicker even the newer versions, IMO) on the KDE window manager (faster for some reason on my Ultra30).   Exciting! </description>
-	</item>
-	<item>
-		<title>Solaris df command</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429973</link>
-		<description>Solaris's df command (disk free, i think) doesn't work the same as Linux. In Linux, the df command by itself shows you the percentage of the used space, and how much is free in a quantifiable (2.7gb, etc) number. Solaris's df normally looks like so:   $ df  / (/dev/dsk/c0t0d0s0 ): 5910408 blocks 866761 files  /devices (/devices ): 0 blocks 0 files  /system/contract (ctfs ): 0 blocks 2147483614 files  /proc (proc ): 0 blocks 3832 files  /etc/mnttab (mnttab ): 0 blocks 0 files  /etc/svc/volatile (swap ): 543904 blocks 35330 files  /system/object (objfs ): 0 blocks 2147483528 files  /dev/fd (fd ): 0 blocks 0 files  /tmp (swap ): 543904 blocks 35330 files  /var/run (swap ): 543904 blocks 35330 files  /home (/dev/dsk/c0t1d0s0 ): 2132390 blocks 1014655 files   That sucks. I don't want to know how many files, I want to know HOW MUCH SPACE is used! So try this version of df instead:    $ df -h  Filesystem size used avail capacity Mounted on  /dev/dsk/c0t0d0s0 8.3G 5.5G 2.7G 67% /  /devices 0K 0K 0K 0% /devices  ctfs 0K 0K 0K 0% /system/contract  proc 0K 0K 0K 0% /proc  mnttab 0K 0K 0K 0% /etc/mnttab  swap 275M 976K 274M 1% /etc/svc/volatile  objfs 0K 0K 0K 0% /system/object  fd 0K 0K 0K 0% /dev/fd  swap 275M 1.2M  </description>
-	</item>
-	<item>
-		<title>Webmin on Solaris 10 Included</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429951</link>
-		<description>Found this on one of the Sun blogs this morning, and had no idea.   http://blogs.sun.com/roller/page/jclingan   Webmin is included with Solaris 10 in /usr/sfw by default. It has SMF and SMC integration and takes about 30 seconds to set up. Easier than building by hand, though webmin has always been a pretty easy product to get up and running.   # /usr/sfw/lib/webmin/setup.sh  # svcadm enable webmin   Too easy, and very sweet! Thanks Sun :) </description>
-	</item>
-	<item>
-		<title>Gimpshop Screenie</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429923</link>
-		<description>Yesterday on Slashdot, there was an announcement that Scott Mochella hacked up the GIMP sourcecode to make it feel more like Adobe's Photoshop. I use Photoshop 5 quite a bit, and had used the GIMP on linux a few times, but its interface left something to be desired. This is it. The GIMP is a VERY powerful (and free, thats good) package for working with graphics, and as such making it easier for Photoshop familiars is a good thing.   I am working on compiling a package in the standard pkgadd format, but for now you can look at my screenshot. This was compiled on my UltraSPARC 30 running Solaris 10 using GCC 3.4.2 and GNU Make 3.80. A package will be coming sometime today.   Check out the original site for lots of info and links to a bunch of diffrent distributions, including Gentoo, Debian, and ARCH Linux. I'm pretty sure I'm the first to compile it on SPARC :D  </description>
-	</item>
-	<item>
-		<title>Gimpshop 224 Package original post 4105</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429867</link>
-		<description>Thanks to Scott from Plasticbugs.com for this killer app. Here's a Solaris package for it:   http://solaris.andarazoroflove.org/packages/GIMPshop-2.2.4.sol10.sparc4u.gz   It's available in the package directory now too. It installs to /usr/local/gimpshop.   Enjoy! </description>
-	</item>
-	<item>
-		<title>Great info on init scripts original post 2905</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429830</link>
-		<description>http://www.brandonhutchinson.com/standalone_proftpd.html   Has an example of setting up proftpd for use with an init scipt, precise and to the point. As a bonus, it works like magic too...lol.   I'm cutting and pasting it in UNMODIFIED form, so as to not lose it should that page dissappear. I'm also reading more up on init scripts, hopefully VNC will be my first one :)   1. Edit your ProFTPD configuration file.  vi /usr/local/etc/proftpd.conf   2. Change the following line in the configuration file:  From: ServerType inetd  To: ServerType standalone   3. Make sure to prepend a &quot;#&quot; to comment out the &quot;ftp&quot; line in /etc/inetd.conf:  #ftp stream tcp nowait root /usr/local/sbin/in.proftpd in.proftpd   4. Send the inetd process a HUP signal via kill -HUP `ps -ef | grep [i]netd | awk '{print $2}'` or similar command.   5. Create a ProFTPD startup/shutdown script in /etc/inetd.conf. Here is our /etc/init.d/proftpd script:   #!/bin/sh   case $1 in  'start' )  /usr/local/sbin/proftpd  ;;  'stop' )  kill `ps -ef | grep proftpd | grep -v grep | awk '{print $2}'` &gt; /dev/null 2&gt;&amp;1  ;;  *)  echo &quot;usage: $0 {start|stop}&quot;  esac   6. Create symbolic links to execute the ProFTPD script during system startup/shutdown. In our case, we will start ProFTPD in run level 3, and shut it down in run level 1.   ln -s /etc/init.d/proftpd /etc/rc3.d/S99proftpd  ln -s /etc/init.d/proftpd /etc/rc1.d/K99proftpd   7. Start ProFTPD in standalone mode.  /etc/init.d/proftpd start    </description>
-	</item>
-	<item>
-		<title>Unlike KDE original post 2805</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429795</link>
-		<description>Solaris Java Desktop System 3 (Gnome) can not be started simultaneously by the same user at the console and in a VNC session. I can (and could on Solaris 9 too) use KDE twice in 2 separate sessions, at the (K)Console and in VNC.</description>
-	</item>
-	<item>
-		<title>Trap 3E Error Strikes Again original post 2505</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429774</link>
-		<description>All was well and good, had the Trap 3e error all outted, but alas, it returned!   I found a fix, to edit a bit of the nvramrc, and run a tiny script at the boot. Openboot firmware is VERY friendly and powerful. Here's the fix, and a link to the original message:   There's a bug report that describes a similar problem with  IBM drives. The fix was to put something in NVRAMrc;   u10c(60)# eeprom nvramrc='probe-all install-console banner ? &quot; Probing Ultra  SCSI controller to work around Trap 3e error&quot; type cr ? &quot; /pci@1f,0/pci@1/scsi@  1&quot; &quot; show-children&quot; execute-device-method drop'   u10c(61)# eeprom nvramrc   nvramrc=probe-all install-console banner  &quot; Probing Ultra SCSI controller to work around Trap 3e error&quot; type cr  &quot; /pci@1f,0/pci@1/scsi@1&quot; &quot; show-children&quot; execute-device-method drop   u10c(62) eeprom use-nvramrc\?  use-nvramrc?=false  u10c(63)# eeprom use-nvramrc\?=true    Substitute your own SCSI controller path for /pci@....   Spaces are significant!   Use &quot;Stop-N&quot; on boot when this doesn't work.   http://groups-beta.google.com/group/comp.sys.sun.misc/msg/a76498dae2bbb5c1?dmode=source   This solved the Trap 3e bother for me! </description>
-	</item>
-	<item>
-		<title>NVEdit Tutorial original post 2705</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429737</link>
-		<description>To get the nvramrc hack to work, I had to use nvedit directly, as the eeprom command formatted the contents kinda weird.   Here's a good tutorial on nvedit:   http://www.netbsd.org/Ports/macppc/nvedit.html </description>
-	</item>
-	<item>
-		<title>inetd isnt in Solaris 10 original post 2705</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429713</link>
-		<description>an interesting discussion going on here:   http://forum.sun.com/thread.jspa?threadID=22547&amp;tstart=45   about the lack of inetd and its counterparts in Solaris 10, I have more to say, will comment later :D </description>
-	</item>
-	<item>
-		<title>Restoring Settings from and older box original post 2705</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429684</link>
-		<description>I copied my .profile and .vnc folders from the Solaris 9 system prior to building the new Solaris 10 system, and a few glaring issues became apparent after replacing them.   First, you can NOT simply drop your old .profile on to the new one with out making sure it won't break the new stuff. My problem is on the old system KDE was my default, thus /opt/sfw/kde/bin was in my path first and foremost. On Solaris 10, I'm using the sexy new Java Desktop (Gnome) and it's goodies are all stored in /usr/bin. I placed the missing /usr/bin in my path BEFORE the KDE path, and now they both work.   Second, as to VNC, you need to reset the permissions on xstartup in the .vnc folder before it can execute its script and start your desktop. Otherwise you'll only get a blank checkerboard screen and the oh-so-familiar X cursor. You can reset them like so:   chmod 0744 $home/.vnc/xstartup   If you want to start KDE, you can place startkde in your xstartup file. I've found that the JDS 3.0 works just fine with VNC, instead of startkde, use gnome-session. My xstartup looks like so:   #!/bin/sh   [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources  xsetroot -solid grey  vncconfig -iconic &amp;  xterm -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;  gnome-session   Now to figure out how to start this bugger automagically at boot.... </description>
-	</item>
-	<item>
-		<title>Solaris 10 Install Cont</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429650</link>
-		<description>9:13pm - F2 again and the partition table is built. A quirk I don't care for is the default layout, and the /export/home automounter. I partitioned my install simply, / on one disk, swap and /home on the other. Both disks are 9.1gb 10K Seagate Cheetahs.   9:16pm - CD1 starts installing...back to /.   9:48pm - reboot, Trap 3e exception :( Had this before, bad superblock on the boot drive, most likely due to it being a UFS drive prior.   Crib'd this to fix it:   TRAP 3E   Cause   Ultra system fails to boot with TRAP 3E. The system sometimes also  displays bad magic number errors.   This is caused by a bad superblock on the boot disk. Which, in turn,  could have beee caused by a SCSI configuration problem.   Action   To fix:   1. Check SCSI bus for illegal configuration, bad cables, and duplicate  SCSI addresses;   2. Boot from cdrom in single user.   OK boot cdrom -sw   3. Attempt to fsck(1M) boot disk. This will probably fail with a  superblock error.   # fsck /dev/rdsk/device   4. Find out locations of alternate superblocks. BE SURE TO USE AN  UPPERCASE -N. For example:   # newfs -N /dev/rdsk/c0t0d0s0  /dev/rdsk/c0t0d0s0: 2048960 sectors in 1348 cylinders of 19 tracks,  80 sectors 1000.5MB in 85 cyl groups (16 c/g, 11.88MB/g, 5696 i/g)  super-block backups (for fsck -F ufs -o b=#) at:  32, 24432, 48832, 73232, 97632, 122032, 146432, 170832, 195232, 219632,  244032, 268432, 292832, 317232, 341632, 366032, 390432, 414832, 439232,  463632, 488032, 512432, 536832, 561232, 585632, 610032, 634432, 658832,  683232, 707632, 732032, 756432, 778272, 802672, 827072, 851472, 875872,&amp;#... </description>
-	</item>
-	<item>
-		<title>Solaris 10 Released and Installing original post 0205</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429636</link>
-		<description>Solaris 10 is officially out. I'm attempting to download it, but Sun's servers are swamped!   I've been waiting for ZFS for a long time :) I'll be upgrading my Ultra30 to Solaris 10 as soon as I can get the .iso's.   w000t!  Got all of the CDs last night, as Sun's servers got a bit more bandwidth back, it came in at a nice 45k. Got all 5 CDs, 4 Software and 1 Companion CD of GNU goodies...   6:48am - Swap 4.1gb for 9.2gb 10K UltraSCSI, now fOrk has 2x9.1gb.   6:55am - insert Solaris 10 CD1, Stop-A the boot and boot cdrom.   6:59am - pretty blue CDE screen, select English (0) and continue   7:02am - complete Identification, input IP Addy, Subnet, etc.   7:03am - input DNS info and domain name.   7:05am - have to leave for work, leave fOrk running, will resume after work or around lunch time!  7:08am - sneak back to hit F2 some more, system is being initialized....   7:09am - Set out for work again...  7:28am - a couple more F2's, now at the disk layout, doing a FULL install, 4.2 gigs!   7:30am - REALLY going to work this time, will be home around 3 or 4, should be allowed to continue around 8.... </description>
-	</item>
-	<item>
-		<title>x86 Solaris  original post 12104</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429556</link>
-		<description>Well I had another power outtage, or rather my son pulled the plug on fOrk 2.0, and I had taken all my SPARC install media to work to play with spOOn. I had to re-download the media, and found there was a newer version. I'm currently using 4/04, and the latest was 9/04.   I fired up the Sun Download Manager and before I knew it was downloading...   Burned the isos, 4x, nice and slow....   DUH! they are x86 isos!!!!   So I am now in the process of converting my Redhat Fedora Core 1 laptop over to x86 Solaris 9! It is a Gateway Solo 2500 333MHz with 128Mb of RAM and a 4.3Gb HDD. Linux runs decently on it, and so far so does Solaris. Got it all installed and its on the way to being functional :)   Will update and maybe a screenie or two later! </description>
-	</item>
-	<item>
-		<title>KDE on Solaris original post 12404</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429514</link>
-		<description>This isn't really that hard to do, and works on SPARC or x86. You can certainly install from blastwave.org too, and use their pathing inplace of mine, but I've found that the older 3.1.1a release on the Solaris Software Companion CD is a tad more stable and an easier go of it, even if its a bit dated.   To install KDE and get it to show up in the login screen's choices for sessions do the following:   Install KDE from the Software Companion CD or blastwave.org. The software companion will install to /opt/sfw/kde.   In a terminal, as root:   cd /opt/sfw/kde/dtlogin   chmod +x (or 0777) install_dtlogin   ./install_dtlogin   exit   Now either restart the machine or refresh the dtlogin screen and KDE will now show up in the list of available sessions. Alas, this is not all that's needed to get it to actually run.   I prefer to do the next bit in a Command Line login, but you could definately do it from any terminal, even remotely.   Login as your user (not root) and add the following to your PATH statment in the .profile file for your user. This file will be in the user's home dir (/export/home/someuser) if its not there, just create it. I like to use pico which you can also install via the Software Companion or directly from blastwave or SunFreeware.com. If you don't have the bin directory from your Companion CD install in your PATH already, or there isn't a .profile file, then you can do this from any command line like so:   /opt/sfw/bin/pico $HOME/.profile   Add the line:   PATH=$PATH:/opt/sfw/kde/bin:.  export PATH   to the .profile file. If it already exists, you can just tack it on the end of the PATH that is already there. Just remember to add a . at the end of that statment and export it at the bottom of the .profile file.  </description>
-	</item>
-	<item>
-		<title>GFTP 2018rc1 Package original post 010405</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429469</link>
-		<description>Compiled this as an update to the 2.0.17 that is out on blastwave.org.   Nothing special, just standard ./configure and gmake :)   Built on Solaris 9 4/04 with GCC 3.4.4 UltraSPARC. This package installs in /usr/local.   http://solaris.andarazoroflove.org/packages/gftp-2.0.18rc1-sol9-sun4u-local.gz </description>
-	</item>
-	<item>
-		<title>Happy Holidays original post 122404</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429434</link>
-		<description>Well I'm off on xmas vacation, compiling random things for practice :)   Here's a package for the 0.7.6 version of cmdftp, a command line ftp that works like a shell.   Compiled on UltraSPARC Solaris 9 using GCC 3.4.4 and gmake.   Happy Holidays!  </description>
-	</item>
-	<item>
-		<title>glib 26 Package original post 012005</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429411</link>
-		<description>I'm installing the new XFCE 4.2 from xfce.org...   It needed glib, so I built it :)   Built with GCC 3.4 on an UltraSPARC and Solaris 9 4/04.   Installs in /usr/local  </description>
-	</item>
-	<item>
-		<title>Azureus 22 works original post 111304</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429382</link>
-		<description>I had no trouble what so ever running the older 2.1.9.4 build of Azureus on my Solaris x86 box, using the Linux Motif build. I'd never gotten it to work on my SPARC, even though I installed the latest JRE, even 64bit support.   I'm happy to say, as of the 2.2.0.0 release, there is actually a build of this most wonderful software for Solaris exclusively and it works on SPARC with the 1.4.2_05 OR 1.5 JRE's installed!!!   http://azureus.sourceforge.net </description>
-	</item>
-	<item>
-		<title>Soundtouch and libsndfile Packages original post 111304</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429322</link>
-		<description>http://solaris.andarazoroflove.org/packages/SoundTouch-1.2.1-1.2.1-sol9-local.gz   Here's a support package for the new &quot;Wired&quot; audio editor from http://bloodshed.net/wired. I'm working on getting the whole thing to compile, with all the support packages. I'll post them as I build them.   As usual, this was built on Solaris 9 UltraSPARC using GCC 3.4.1 from Blastwave.org. It installs in /usr/local under the alias WULsoundtouch.   WUL is my 3 letter package code, it stands for wOOble Unix Labs, though it really means nothing, its just another of my domains and the easiest way to identify my packages apart from others (CSW, SFW, etc).  This is another support package for wired, getting closer and closer.   http://solaris.andarazoroflove.org/packages/libsndfile-1.0.10-sol9-local.gz   More info on this library can be found at the Author's site:   http://www.mega-nerd.com/libsndfile/   This package was compiled using GCC 3.4.1, on Solaris 9 UltraSPARC. It installs in /usr/local.   Remember, you can click the &quot;packages&quot; word in the logo to access the packages directory directly! </description>
-	</item>
-	<item>
-		<title>I finally got Samba working original post 111305</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429270</link>
-		<description>Ok, this is a beauty. I've never on any *nix been able to get Samba to work correctly from scratch. Sure in Mandrake and Caldera, they worked out of the box, but Fedora and Debian (the only L-*nixs i use) were always bust for me :(   I'm happy my first WORKING Samba install (makes me sound like a total newb, tho I've been tinkering for years :( ) is on SOLARIS!   I had a bit of help, used the SunFreeWare.com packages of Samba, ncurses, etc. They install in /usr/local/samba but do NOT contain the /usr/local/samba/lib/smb.conf, you've got to make one. You can either check the samba.org docs and copy/paste one, or use SWAT to make one. I used SWAT via Webmin.   There is an excellent tutorial on adding the inetd.conf goodies you need to have Samba start up automatically and building an smb.conf from scratch here:   http://www.techgirl-net.com/samba.html   Also, a good thing to note is that unlike Linux, Solaris doesn't use killall to restart processes. There is a command called pkill and restarting inetd is as easy as:   pkill -HUP inetd   :) </description>
-	</item>
-	<item>
-		<title>24bit Color in Solaris original post 111704</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429236</link>
-		<description>Ok, I've got 24bit Framebuffers. 2 of them. A Creator 3D in my Ultra and the rare 8mb 24bit SX in my SS20. How is it then that Solaris 9 cant recognize and initialize them in 24bit color out of the box? Well theres something to do with application compatibility and yadda yadda, but 8bit looks TERRIBLE!   So heres the trick to make Solaris run in all its glorious 24 bits!   Make the directory /etc/dt/config   Copy /usr/dt/config/Xservers to /etc/dt/config/Xservers   edit the new copy and add the following to the end of the VERY last line (the one that starts with :0) -dev /dev/fb0 defclass TrueColor defdepth 24   It'll look something like so:   :0 Local local_uid@console root /usr/openwin/bin/Xsun :0 -nobanner -dev /dev/fb0 defclass TrueColor defdepth 24   then reboot that puppy and enjoy your 24bit color! Needless to say, this isn't going to work unless you have a 24bit compatible framebuffer. </description>
-	</item>
-	<item>
-		<title>GProFTPd Package original post 102904</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429205</link>
-		<description>http://solaris.andarazoroflove.org/packages/gproftpd-8.1.7-sol9-usr.gz   You'll have to cut and paste the URLs for my packages, this blogger doesnt understand HTML yet...   Here we have GProFTPd, a graphical frontend for the ever popular ProFTPd. This is version 8.1.7.   Built using GCC 3.4.1 on Solaris 9 SPARC. This is a 32bit Package and it installs in /usr. It was packaged using the make_package script from Sunfreeware.com.   This was a program that required a bit of tweaking to compile. Solaris does not include the stdint.h header, and as far as I could find, there isnt one available. To that end, I had to modify the src/gprostats.c to include the correct Solaris header, sys/int_types.h. This allowed me to compile, and the program runs beautifully.  </description>
-	</item>
-	<item>
-		<title>libIDL package original post 102904</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429157</link>
-		<description>http://solaris.andarazoroflove.org/packages/libIDL-0.6.8-sol9-local.gz   This is the libIDL Compiling Library, version 0.6.8. This was a required dependancy for Firefox, and I installed it because I'm trying to compile Firefox RC1 for myself. So far no luck, but if I get it, it'll be posted here :)   This was compiled using GCC 3.4.1 on Solaris 9 SPARC, and installs in /usr/local.   More info for this library can be found here:   http://andrewtv.org/libIDL   I am trying out a new attachment mod to the blogger, so you can download directly from the button below! I am also working on getting Directory Listing available for the packages directory. </description>
-	</item>
-	<item>
-		<title>Welcome original post 102904</title>
-		<link>http://solaris.andarazoroflove.org/index.cgi?mode=viewone&amp;blog=1130429087</link>
-		<description>I've been meaning to do something like this for a LONG time, but I'm a procrastinator. This is my simple blog for my experiences with my flavor of Unix, Solaris!   I've been using Solaris regularly for a little over a year now. I say &quot;regularly&quot; because prior to diving in to a *nix, I got my POSIX fix with RedHat. While I still use Fedora, I have a serious penchant for SPARC based Hardware. My first SPARC was a fully loaded SPARCStation LX. It actually came with Solaris 2.5 loaded on it when I bought it from eBay, but I promptly replaced that with RedHat 6.2. That was 5 years ago.   My current SPARC computers are a considerable bit more responsive than the old LX box. I currently have a SPARCStation 20 MP with 2x75MHz SuperSPARC IIs and a Ultra30 with the 296MHz UltraSPARCii. I am using a boxed copy of Solaris 8 on the SS20, and a Sun-downloaded copy of Solaris 9 on the Ultra. Sometime I'll post some pics of them, spOOn and fOrk 2.0, respectively. There's some pics of spOOn on the gallery, available from the main page.   Back to the switch. I had used Solaris at work, we run a couple IVR's and a scheduling program called IEX on SPARC based hardware and Solaris 7 and 8. I had always considered Solaris to be &quot;big-iron&quot; kind of stuff and was pretty intimidated. Once Sun began offering free downloads of Solaris, I thought what could I lose?   I've installed it a few dozen times. I've gotten everything set up, just to have to start over again and again. I've gotten programs to compile that hadn't compiled before. I am still a newb. I've set this little site up so I can share my experiences, and others can add their comments.   By NO means am I a Solaris expert. I consider myself fairly familiar with using *nix and simply want to share what works for me.  </description>
-	</item>
-
-	</channel>
-</rss>
-

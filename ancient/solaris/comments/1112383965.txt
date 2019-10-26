@@ -1,2 +1,0 @@
-1130206369###1112383965###iant######Do I really need root access to install GIMP ? 
-1130250353###1112383965###adam######For this package you do, it installs in /usr/local and your normal user most likely doesn't have the rights to install there. The GimpShop package needs updating to the ne 2.8 version, I'll get that done and try to make it install in $home.

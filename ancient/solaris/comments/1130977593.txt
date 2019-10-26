@@ -1,5 +1,0 @@
-1131227734###1130977593###Stefan Flueckiger###netroach@retrobytes.ch###hi,&#13;<br>&#13;<br>i installed openoffice2.0 a few days ago on my solaris in office too.&#13;<br>but... &quot;the lack of documentation for installing OpenOffice on SPARC Solaris&quot; ...i can't understand. i went on documentation.openoffice.org, clicked on &quot;setup guides&quot;, opened the setup guide for openoffice 2.0, and opened section &quot;solaris installation&quot; on page 7.&#13;<br>who needs more?&#13;<br>&#13;<br>regards, stefan
-1131383743###1130977593###adam######Hey niiiice, I didn't dig that far, maybe I should have...I'd googled it a few times and not found what I was looking for, thanks for the link :)
-1141875568###1130977593###Bernd######How to change the default installation dir ? It always suggest on /opt but I woulds like to install it on a different location&#13;<br>&#13;<br>B-)
-1141875753###1130977593###Bernd######OK - changed all BASEDIR=/opt/... in each pkginfo .,.. argh - there must be an easier way ...&#13;<br>&#13;<br>B-)
-1211583118###1130977593###Sumner######Try this to avoid the &quot;y&quot; responses:<br>pkgadd -a default -d /xxx all
