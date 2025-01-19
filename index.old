@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="refresh" content="10;URL='macboot.htm'" /> 
+<title>Booting MacOS in 10 Seconds...</title>
+
+<style type="text/css">
+<!--
+body {
+	background-color: #666666;
+	margin-left: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<br><br><br><br><br><br>
+<center><a href="macboot.htm"><img src="mac.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="sparcboot.htm"><img src="sun.png"></a></center>
+</html>
